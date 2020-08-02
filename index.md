@@ -24,6 +24,8 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 * Image Copy
 * Absolute Difference
 
+* * *
+
 ## INSTRUCTIONS TO RUN ON LINUX
 
 ### Build the library
@@ -36,9 +38,6 @@ $ cd build
 $ cmake ..
         or
 $ ccmake .. 
-    > c
-    > c
-    > g
 $ make
 ```
 
@@ -51,15 +50,12 @@ $ cd build
 $ cmake ..
         or
 $ ccmake .. 
-    > c
-    > c
-    > g
 $ make
 $ cd ../
 $ ./bin/basic_image_demo
 ```
 
-**OR**
+OR
 
 ### CMake
 
@@ -75,13 +71,15 @@ $ chmod +x run_cmake.sh
 $ ./run_cmake.sh
 ```
 
-### Build and 
+### Build and Run
 
 Run the below script to build and run the whole library
 ```
 $ chmod +x run_demo.sh
 $ ./run_demo.sh
 ```
+
+* * *
 
 ## INSTRUCTION TO RUN ON WINDOWS
 
@@ -109,7 +107,8 @@ $ ./run_demo.sh
 * Open `BasicImageLibrary.sln` inside `test_application\build\`
 * Change to `Release` and `x64`
 * Right click basic_image_demo and click `Property > Linker > Input`
-* Edit Additional Dependencies and add `{PATH TO basic_image_library}\lib\Release\basic_image_core.lib`
+* Edit Additional Dependencies and add 
+```{exact_path_to_basic_image_library}\lib\Release\basic_image_core.lib```
 * Right click basic_image_demo and click `Build`
 
 ```
@@ -118,5 +117,3 @@ $ ./run_demo.sh
 ```
 
 **Output will be dumped in** `test_application/output_test_images`
-
-
