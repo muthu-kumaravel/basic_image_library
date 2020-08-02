@@ -3,7 +3,6 @@
 [![forks](https://img.shields.io/github/forks/muthu-kumaravel/basic_image_library)](https://github.com/muthu-kumaravel/basic_image_library/network/members)
 [![issues](https://img.shields.io/github/issues/muthu-kumaravel/basic_image_library)](https://github.com/muthu-kumaravel/basic_image_library/issues)
 
-
 # Basic Image Processing Library
 
 Basic Image Processing library is a comprehensive computer vision and image processing library for all architecture with CPU backend and developed for __Linux__, __Windows__, and __Mac__.
@@ -26,6 +25,8 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 * Image Copy
 * Absolute Difference
 
+* * *
+
 ## INSTRUCTIONS TO RUN ON LINUX
 
 ### Build the library
@@ -38,9 +39,6 @@ $ cd build
 $ cmake ..
         or
 $ ccmake .. 
-    > c
-    > c
-    > g
 $ make
 ```
 
@@ -53,15 +51,12 @@ $ cd build
 $ cmake ..
         or
 $ ccmake .. 
-    > c
-    > c
-    > g
 $ make
 $ cd ../
 $ ./bin/basic_image_demo
 ```
 
-**OR**
+OR
 
 ### CMake
 
@@ -77,13 +72,15 @@ $ chmod +x run_cmake.sh
 $ ./run_cmake.sh
 ```
 
-### Build and 
+### Build and Run
 
 Run the below script to build and run the whole library
 ```
 $ chmod +x run_demo.sh
 $ ./run_demo.sh
 ```
+
+* * *
 
 ## INSTRUCTION TO RUN ON WINDOWS
 
@@ -95,6 +92,7 @@ $ ./run_demo.sh
 > mkdir build
 > cmake..
 ```
+
 * Open `BasicImageLibrary.sln` insice `main_code\build`
 * Change to `Release` and `x64`
 * Right click basic_image_core and click `Build`
@@ -106,11 +104,14 @@ $ ./run_demo.sh
 > mkdir build
 > cmake ..
 ```
+
 * Open `BasicImageLibrary.sln` inside `test_application\build\`
 * Change to `Release` and `x64`
 * Right click basic_image_demo and click `Property > Linker > Input`
-* Edit Additional Dependencies and add `{PATH TO basic_image_library}\lib\Release\basic_image_core.lib`
+* Edit Additional Dependencies and add 
+```{exact_path_to_basic_image_library}\lib\Release\basic_image_core.lib```
 * Right click basic_image_demo and click `Build`
+
 ```
 > cd ../
 > .\bin\Release\basic_image_demo.exe
