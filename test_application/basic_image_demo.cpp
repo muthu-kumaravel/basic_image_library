@@ -1,3 +1,10 @@
+/**************************************************************************
+ *   Copyright (C) 2020 MUTHUKUMARAVEL
+ *   Author             : MUTHUKUMARAVEL 
+ *   github username    : muthu-kumaravel
+ *   github email       : muthukumaravel.muthuraman@gmail.com
+**************************************************************************/
+
 #include <iostream>
 #include <stdio.h>
 
