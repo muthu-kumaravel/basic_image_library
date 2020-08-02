@@ -9,8 +9,6 @@
 #include <stdio.h>
 #include <cstring>
 
-#define MAX_IMG_LENGTH ( 24883200 )                         // 4K image: 3840 * 2160 * 3
-
 using namespace std;
 
 typedef unsigned char       uint8;
@@ -34,7 +32,23 @@ typedef enum
 
 typedef struct 
 {
-    unsigned int width;
-    unsigned int height;
-    unsigned int channel;
+    uint32 width;
+    uint32 height;
+    uint32 channel;
 } img_size;
+
+#define MAX_IMG_LENGTH          (24883200)
+#define PI                      3.14159265
+#define RAD(deg)                (deg * PI / 180)
+#define ABS(a)                  ((a < 0) ? (-a) : (a))
+#define MIN2(a,b)               ((a < b) ? a : b)
+#define MIN3(a,b,c)             ((a < b) && (a < c) ?  a : ((b < c) ? b : c))
+#define MAX2(a,b)               ((a > b) ? a : b)
+#define MAX3(a,b,c)             ((a > b) && (a > c) ?  a : ((b > c) ? b : c))
+#define INRANGE(a, x, y)        ((a >= x) && (a <= y) ? 1 : 0)
+#define FLOOR(a)                ((int32) a)
+#define CEIL(a)                 ((int32) (a + 1.0))
+#define ISEVEN(a)               ((a % 2 == 0) ? 1 : 0)
+#define PIXELCHECK(pixel)       (pixel < (float32) 0) ? ((float32) 0) : ((pixel < (float32) 255) ? pixel : ((float32) 255))
+#define ISGREATER(pixel, value) ((pixel > value) ? 1 : 0)
+#define ISLESSER(pixel, value)  ((pixel < value) ? 1 : 0)

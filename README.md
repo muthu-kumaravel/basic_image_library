@@ -17,6 +17,11 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 * Supports only PNG images 
 * Partial support for JPEG images (Output may be flipped)
 
+## Supported Functions
+
+* Image Copy
+* Absolute Difference
+
 ## INSTRUCTIONS TO RUN ON LINUX
 
 ### Build the library
