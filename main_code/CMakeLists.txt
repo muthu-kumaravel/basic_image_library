@@ -63,12 +63,15 @@ endif (PROFILE_TIME)
 #####
 # Include directories
 #####
-include_directories("${PROJECT_SOURCE_DIR}/includes")
+include_directories("${PROJECT_SOURCE_DIR}/includes/core"
+                    "${PROJECT_SOURCE_DIR}/includes/basic_functions"
+                    "${PROJECT_SOURCE_DIR}/includes/math_functions")
 
 #####
 # Source files
 #####
-file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/src/*.cpp")
+file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/src/basic_functions/*.cpp"
+                    "${PROJECT_SOURCE_DIR}/src/math_functions/*.cpp")
 
 #####
 # Set Basic Image library generation path
