@@ -1,7 +1,7 @@
 [![MIT licensed](https://img.shields.io/github/license/muthu-kumaravel/basic_image_library)](https://opensource.org/licenses/MIT)
-[![issues](https://img.shields.io/github/issues/muthu-kumaravel/basic_image_library)
-[![forks](https://img.shields.io/github/forks/muthu-kumaravel/basic_image_library)
-[![stars](https://img.shields.io/github/stars/muthu-kumaravel/basic_image_library)
+[![stars](https://img.shields.io/github/stars/muthu-kumaravel/basic_image_library)](https://github.com/muthu-kumaravel/basic_image_library/stargazers)
+[![forks](https://img.shields.io/github/forks/muthu-kumaravel/basic_image_library)](https://github.com/muthu-kumaravel/basic_image_library/network/members)
+[![issues](https://img.shields.io/github/issues/muthu-kumaravel/basic_image_library)](https://github.com/muthu-kumaravel/basic_image_library/issues)
 
 
 # Basic Image Processing Library
