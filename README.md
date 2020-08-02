@@ -8,6 +8,7 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 * Any Linux, Windows or Mac based OS
 * CMake Version `3.5` or higher
+* Visual Studio 2019
 
 ## Initial Release
 
@@ -16,7 +17,9 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 * Supports only PNG images 
 * Partial support for JPEG images (Output may be flipped)
 
-## Instructions to build the library
+## INSTRUCTIONS TO RUN ON LINUX
+
+### Build the library
 
 ```
 $ git clone https://github.com/muthu-kumaravel/basic_image_library.git
@@ -32,7 +35,7 @@ $ ccmake ..
 $ make
 ```
 
-## Instructions to run the library
+### Instructions to run the library
 
 ```
 $ cd ../../test_application/
@@ -51,7 +54,7 @@ $ ./bin/basic_image_demo
 
 **OR**
 
-## CMake
+### CMake
 
 Run the below script to cmake the whole library
 ```
@@ -65,12 +68,43 @@ $ chmod +x run_cmake.sh
 $ ./run_cmake.sh
 ```
 
-## Build and 
+### Build and 
 
 Run the below script to build and run the whole library
 ```
 $ chmod +x run_demo.sh
 $ ./run_demo.sh
+```
+
+## INSTRUCTION TO RUN ON WINDOWS
+
+### Clone and build library
+```
+> git clone https://github.com/muthu-kumaravel/basic_image_library.git
+> cd .\basic_image_library\
+> cd .\main_code\
+> mkdir build
+> cmake..
+```
+* Open `BasicImageLibrary.sln` insice `main_code\build`
+* Change to `Release` and `x64`
+* Right click basic_image_core and click `Build`
+
+### Run sample application
+```
+> cd ../../
+> cd .\test_application\
+> mkdir build
+> cmake ..
+```
+* Open `BasicImageLibrary.sln` inside `test_application\build\`
+* Change to `Release` and `x64`
+* Right click basic_image_demo and click `Property > Linker > Input`
+* Edit Additional Dependencies and add `{PATH TO basic_image_library}\lib\Release\basic_image_core.lib`
+* Right click basic_image_demo and click `Build`
+```
+> cd ../
+> .\bin\Release\basic_image_demo.exe
 ```
 
 **Output will be dumped in** `test_application/output_test_images`
