@@ -3,7 +3,7 @@
 [![forks](https://img.shields.io/github/forks/muthu-kumaravel/basic_image_library)](https://github.com/muthu-kumaravel/basic_image_library/network/members)
 [![issues](https://img.shields.io/github/issues/muthu-kumaravel/basic_image_library)](https://github.com/muthu-kumaravel/basic_image_library/issues)
 
-# Basic Image Processing Library
+# [Basic Image Processing Library](https://muthu-kumaravel.github.io/basic_image_library/)
 
 Basic Image Processing library is a comprehensive computer vision and image processing library for all architecture with CPU backend and developed for __Linux__, __Windows__, and __Mac__.
 
