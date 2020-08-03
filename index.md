@@ -26,7 +26,7 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 * Absolute Difference
 
 **For more informations on API's Headers and usage visit**
-**[API Description](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md)** or **[Main Code Includes](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code)**
+**[API Description](./api_header.html)** or **[Main Code Includes](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code)**
 
 * * *
 
