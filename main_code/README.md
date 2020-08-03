@@ -15,10 +15,10 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 ## Supported Functions
 
-- Basic Functions
-  - Image Copy
-- Math Functions
-  - Absolute Difference
+- [Basic Functions](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#basic-functions)
+  - [Image Copy](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#1-image-return)
+- [Math Functions](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#math-functions)
+  - [Absolute Difference](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#1-absolute-difference)
 
 * * *
 
