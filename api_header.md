@@ -35,7 +35,7 @@ Copies input image bitwise to the destination image (memcpy)
 > OUTPUT = INPUT1
 
 
-```js
+``` c
 status img_return(
         uint8 *ip_buff,
         uint8 *op_buff,
@@ -62,7 +62,7 @@ Performes a Absolute difference on two input images and does a pixel check on to
 > OUTPUT = ABS(INPUT1 - INPUT2)
 
 
-```js
+``` c
 status img_absolute_difference(
         uint8 *ip_buff1,
         uint8 *ip_buff2,
