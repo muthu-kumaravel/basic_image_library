@@ -32,16 +32,26 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 ## INSTRUCTIONS TO RUN ON LINUX
 
-### Build the library
+### Clone the Lobrary
 
 ```
 $ git clone https://github.com/muthu-kumaravel/basic_image_library.git
+```
+
+### Build the library
+
+```
 $ cd basic_image_library/main_code/
 $ mkdir build
 $ cd build
 $ cmake ..
         or
-$ ccmake .. 
+$ ccmake ..
+```
+
+For Debug mode or any other user preference in cmake, make the necessary modification manually in `main_code\CMakeLists.txt` or via cmake gui (`ccmake ..`)
+
+``` 
 $ make
 ```
 
@@ -54,18 +64,37 @@ $ cd build
 $ cmake ..
         or
 $ ccmake .. 
+```
+
+For Debug mode or any other user preference in cmake, make the necessary modification manually in `main_code\CMakeLists.txt` or via cmake gui (`ccmake ..`)
+
+``` 
 $ make
 $ cd ../
-$ ./bin/basic_image_demo
+```
+
+**If Release**
+
+``` 
+$ ./bin/Release/basic_image_demo
+```
+
+**If Debug**
+
+``` 
+$ ./bin/Release/basic_image_demo
 ```
 
 OR
 
-### CMake
+### Build Using Shell Script
+
+**Make sure Build type is Release** (Script is applicable only for build in Release)
+
+#### CMake
 
 Run the below script to cmake the whole library
 ```
-$ git clone https://github.com/muthu-kumaravel/basic_image_library.git
 $ cd basic_image_library/main_code/
 $ mkdir build
 $ cd ../test_application/
@@ -75,7 +104,7 @@ $ chmod +x run_cmake.sh
 $ ./run_cmake.sh
 ```
 
-### Build and Run
+#### Build and Run
 
 Run the below script to build and run the whole library
 ```
@@ -89,15 +118,22 @@ $ ./run_demo.sh
 
 ### Clone and build library
 ```
-> git clone https://github.com/muthu-kumaravel/basic_image_library.git
 > cd .\basic_image_library\
 > cd .\main_code\
 > mkdir build
 > cmake..
 ```
+**For Release**
 
 * Open `BasicImageLibrary.sln` insice `main_code\build`
 * Change to `Release` and `x64`
+* Right click basic_image_core and click `Build`
+
+**For Debug**
+
+* Change `DEBUG OFF` to `DEBUG ON` on `main_code\CMakeLists.txt`
+* Open `BasicImageLibrary.sln` insice `main_code\build`
+* Change to `Debug` and `x64`
 * Right click basic_image_core and click `Build`
 
 ### Run sample application
@@ -108,16 +144,27 @@ $ ./run_demo.sh
 > cmake ..
 ```
 
+**For Release**
+
 * Open `BasicImageLibrary.sln` inside `test_application\build\`
 * Change to `Release` and `x64`
-* Right click basic_image_demo and click `Property > Linker > Input`
-* Edit Additional Dependencies and add 
-```{exact_path_to_basic_image_library}\lib\Release\basic_image_core.lib```
 * Right click basic_image_demo and click `Build`
 
 ```
 > cd ../
 > .\bin\Release\basic_image_demo.exe
+```
+
+**For Debug**
+
+* Change `DEBUG OFF` to `DEBUG ON` on `test_application\CMakeLists.txt`
+* Open `BasicImageLibrary.sln` inside `test_application\build\`
+* Change to `Debug` and `x64`
+* Right click basic_image_demo and click `Build`
+
+```
+> cd ../
+> .\bin\Debug\basic_image_demo.exe
 ```
 
 **Output will be dumped in** `test_application/output_test_images`

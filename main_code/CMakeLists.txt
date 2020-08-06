@@ -15,17 +15,28 @@ project (BasicImageLibrary)
 #######
 # Define user options
 ######
-option(DEBUG "Build Basic Image Library in DEBUG mode" OFF)
+option(DEBUG "Build Basic Image Library in DEBUG mode" ON)
 option(PROFILE_TIME "Profile execution time" OFF)
 
 #######
 # Set necessary flags
 ######
 set(CXX_FLAGS "")
-set(CMAKE_CXX_FLAGS          "-fPIC")
-set(CMAKE_CXX_FLAGS_DEBUG    "-g -std=c++11")
-set(CMAKE_CXX_FLAGS_RELEASE  "-O3 -std=c++11")
+set(CMAKE_CXX_FLAGS_DEBUG "-g -std=gnu++11")
 set(CMAKE_BUILD_TYPE "Release")
+if(APPLE)
+  set(CMAKE_CXX_FLAGS_RELEASE  "-O3 -std=gnu++11")
+else(APPLE)
+  set(CMAKE_CXX_FLAGS_RELEASE  "-O3 -std=gnu++11 -fopenmp")
+endif()
+
+if(WIN32)
+  if(DEBUG)
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MDd")
+  else(DEBUG)
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
+  endif(DEBUG)
+endif(WIN32)
 
 ######
 # Identify system architecture
@@ -35,11 +46,6 @@ if(UNIX)
 elseif(WIN32)
   set(ARCHITECTURE "x86_64")
 endif()
-
-if(WIN32)
-  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
-  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
-endif(WIN32)
 
 #######
 # Set essential flags for DEBUG build
@@ -76,7 +82,16 @@ file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/src/basic_functions/*.cpp"
 #####
 # Set Basic Image library generation path
 #####
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../lib)
+if (WIN32)
+  set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../lib)
+else (WIN32)
+  if(DEBUG)  
+    set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../lib/Debug)
+  else(DEBUG)  
+    set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../lib/Release)
+  endif(DEBUG)
+endif (WIN32)
+
 
 #####
 # Build Basic Image core library

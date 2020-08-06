@@ -3,5 +3,5 @@ make
 cd ../../test_application/build/
 make
 cd ../
-./bin/basic_image_demo
+./bin/Release/basic_image_demo
 cd ../
