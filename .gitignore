@@ -3,3 +3,5 @@ lib
 bin
 .vs
 .vscode
+run_cmake.sh
+run_demo.sh

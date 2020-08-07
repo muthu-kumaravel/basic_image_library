@@ -85,33 +85,6 @@ $ ./bin/Release/basic_image_demo
 $ ./bin/Release/basic_image_demo
 ```
 
-OR
-
-### Build Using Shell Script
-
-**Make sure Build type is Release** (Script is applicable only for build in Release)
-
-#### CMake
-
-Run the below script to cmake the whole library
-```
-$ cd basic_image_library/main_code/
-$ mkdir build
-$ cd ../test_application/
-$ mkdir build
-$ cd ../
-$ chmod +x run_cmake.sh
-$ ./run_cmake.sh
-```
-
-#### Build and Run
-
-Run the below script to build and run the whole library
-```
-$ chmod +x run_demo.sh
-$ ./run_demo.sh
-```
-
 * * *
 
 ## INSTRUCTION TO RUN ON WINDOWS
