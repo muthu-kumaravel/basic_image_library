@@ -66,13 +66,15 @@ endif (DEBUG)
 #####
 include_directories("${PROJECT_SOURCE_DIR}/includes/core"
                     "${PROJECT_SOURCE_DIR}/includes/basic_functions"
-                    "${PROJECT_SOURCE_DIR}/includes/math_functions")
+                    "${PROJECT_SOURCE_DIR}/includes/math_functions"
+                    "${PROJECT_SOURCE_DIR}/includes/adobe_functions")
 
 #####
 # Source files
 #####
 file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/src/basic_functions/*.cpp"
-                    "${PROJECT_SOURCE_DIR}/src/math_functions/*.cpp")
+                    "${PROJECT_SOURCE_DIR}/src/math_functions/*.cpp"
+                    "${PROJECT_SOURCE_DIR}/src/adobe_functions/*.cpp")
 
 #####
 # Set Basic Image library generation path

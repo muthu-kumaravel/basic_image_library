@@ -5,3 +5,4 @@ bin
 .vscode
 run_cmake.sh
 run_demo.sh
+output_test_images

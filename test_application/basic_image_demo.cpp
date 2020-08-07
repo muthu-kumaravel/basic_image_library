@@ -53,5 +53,18 @@ int main()
         DEBUG_INFO("\nImage Absolute Difference function not processed");
     } 
 
+    /* img_return */
+    int8 temprature = 5;
+    const char *output_image_path_img_temprature = "output_test_images/img_temprature.png";
+    if(err == img_temprature(ip_image_1, op_image_1, ip_image_size_1, &op_image_size_1, temprature))
+    {
+        stbi_write_png(output_image_path_img_temprature, op_image_size_1.width, op_image_size_1.height, op_image_size_1.channel, op_image_1, op_image_size_1.width * op_image_size_1.channel);
+        DEBUG_INFO("\nImage Temperature function processed and image write successfull");
+    }
+    else
+    {
+        DEBUG_INFO("\nImage Temperature function not processed");
+    } 
+
     return 0;
 }

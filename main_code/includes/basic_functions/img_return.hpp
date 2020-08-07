@@ -4,8 +4,8 @@
  *   github username    : muthu-kumaravel
  *   github email       : muthukumaravel.muthuraman@gmail.com
 **************************************************************************/
-#ifndef BIL_BASIC_FUNCTIONS_H
-#define BIL_BASIC_FUNCTIONS_H
+#ifndef BIL_BASIC_RETURN_FUNCTIONS_H
+#define BIL_BASIC_RETURN_FUNCTIONS_H
 
 #include "backend_types.hpp"
 

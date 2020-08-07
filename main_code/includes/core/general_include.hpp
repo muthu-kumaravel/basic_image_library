@@ -16,6 +16,7 @@ extern "C"
 
 #include "img_return.hpp"
 #include "img_absolute_difference.hpp"
+#include "img_temperature.hpp"
 
 #ifdef __cplusplus
 }
