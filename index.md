@@ -24,6 +24,7 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 * Image Copy
 * Absolute Difference
+* Temperature Modification (Yet to support in full scale)
 
 **For more informations on API's Headers and usage visit**
 **[API README](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md)** or **[Main Code Includes](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code)**
@@ -85,33 +86,6 @@ $ ./bin/Release/basic_image_demo
 $ ./bin/Release/basic_image_demo
 ```
 
-OR
-
-### Build Using Shell Script
-
-**Make sure Build type is Release** (Script is applicable only for build in Release)
-
-#### CMake
-
-Run the below script to cmake the whole library
-```
-$ cd basic_image_library/main_code/
-$ mkdir build
-$ cd ../test_application/
-$ mkdir build
-$ cd ../
-$ chmod +x run_cmake.sh
-$ ./run_cmake.sh
-```
-
-#### Build and Run
-
-Run the below script to build and run the whole library
-```
-$ chmod +x run_demo.sh
-$ ./run_demo.sh
-```
-
 * * *
 
 ## INSTRUCTION TO RUN ON WINDOWS
@@ -123,6 +97,11 @@ $ ./run_demo.sh
 > mkdir build
 > cmake..
 ```
+
+>
+> Make Sure cmake is done with `Building for: Visual Studio 16 2019`
+>
+
 **For Release**
 
 * Open `BasicImageLibrary.sln` insice `main_code\build`
