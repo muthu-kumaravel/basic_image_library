@@ -34,11 +34,11 @@ int main()
     if(err == img_return(ip_image_1, op_image_1, ip_image_size_1, &op_image_size_1))
     {
         stbi_write_png(output_image_path_img_return, op_image_size_1.width, op_image_size_1.height, op_image_size_1.channel, op_image_1, op_image_size_1.width * op_image_size_1.channel);
-        cerr<<"SUCCESS\n";
+        DEBUG_INFO("\nImage Return function processed and image write successfull");
     }
     else
     {
-        cerr<<"FAILURE\n";
+        DEBUG_INFO("\nImage Return function not processed");
     } 
 
     /* Absolute */
@@ -46,11 +46,11 @@ int main()
     if(err == img_absolute_difference(ip_image_1, ip_image_2, op_image_1, ip_image_size_1, &op_image_size_1))
     {
         stbi_write_png(output_image_path_img_absolute_difference, op_image_size_1.width, op_image_size_1.height, op_image_size_1.channel, op_image_1, op_image_size_1.width * op_image_size_1.channel);
-        cerr<<"SUCCESS\n";
+        DEBUG_INFO("\nImage Absolute Difference function processed and image write successfull");
     }
     else
     {
-        cerr<<"FAILURE\n";
+        DEBUG_INFO("\nImage Absolute Difference function not processed");
     } 
 
     return 0;

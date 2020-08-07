@@ -123,6 +123,11 @@ $ ./run_demo.sh
 > mkdir build
 > cmake..
 ```
+
+>
+> Make Sure cmake is Happening for `Building for: Visual Studio 16 2019`
+>
+
 **For Release**
 
 * Open `BasicImageLibrary.sln` insice `main_code\build`

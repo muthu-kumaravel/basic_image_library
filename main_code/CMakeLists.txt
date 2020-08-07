@@ -15,7 +15,7 @@ project (BasicImageLibrary)
 #######
 # Define user options
 ######
-option(DEBUG "Build Basic Image Library in DEBUG mode" ON)
+option(DEBUG "Build Basic Image Library in DEBUG mode" OFF)
 option(PROFILE_TIME "Profile execution time" OFF)
 
 #######
@@ -52,7 +52,7 @@ endif()
 ######
 if (DEBUG)
   set(CMAKE_VERBOSE_MAKEFILE ON)
-  add_definitions(-DFR_DEBUG=1)
+  add_definitions(-DBIL_DEBUG=1)
   set(CXX_FLAGS "${CXX_FLAGS} ${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_DEBUG}")
 else (DEBUG)
   MESSAGE( STATUS "variable is: " ${CXX_FLAGS} )
