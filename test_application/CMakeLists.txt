@@ -20,12 +20,15 @@ option(DEBUG "Build Basic Image sample app in DEBUG mode" OFF)
 #######
 # Set necessary flags
 ######
+if(WIN32)
+elseif(WIN32)
 set(CXX_FLAGS "")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -std=gnu++11")
 set(CMAKE_BUILD_TYPE "Release")
+endif(WIN32)
 if(APPLE)
   set(CMAKE_CXX_FLAGS_RELEASE  "-O3 -std=gnu++11")
-else(APPLE)
+elseif(UNIX)
   set(CMAKE_CXX_FLAGS_RELEASE  "-O3 -std=gnu++11 -fopenmp")
 endif()
 

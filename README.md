@@ -125,7 +125,7 @@ $ ./run_demo.sh
 ```
 
 >
-> Make Sure cmake is Happening for `Building for: Visual Studio 16 2019`
+> Make Sure cmake is done with `Building for: Visual Studio 16 2019`
 >
 
 **For Release**

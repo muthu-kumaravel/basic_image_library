@@ -16,17 +16,19 @@ project (BasicImageLibrary)
 # Define user options
 ######
 option(DEBUG "Build Basic Image Library in DEBUG mode" OFF)
-option(PROFILE_TIME "Profile execution time" OFF)
 
 #######
 # Set necessary flags
 ######
+if(WIN32)
+elseif(WIN32)
 set(CXX_FLAGS "")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -std=gnu++11")
 set(CMAKE_BUILD_TYPE "Release")
+endif(WIN32)
 if(APPLE)
   set(CMAKE_CXX_FLAGS_RELEASE  "-O3 -std=gnu++11")
-else(APPLE)
+elseif(UNIX)
   set(CMAKE_CXX_FLAGS_RELEASE  "-O3 -std=gnu++11 -fopenmp")
 endif()
 
@@ -58,13 +60,6 @@ else (DEBUG)
   MESSAGE( STATUS "variable is: " ${CXX_FLAGS} )
   set(CXX_FLAGS "${CXX_FLAGS} ${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_RELEASE}")
 endif (DEBUG)
-
-#######
-# Profile exec time in Basic Image Library pipeline
-######
-if (PROFILE_TIME)
-  add_definitions(-DPROFILE_TIME=1)
-endif (PROFILE_TIME)
 
 #####
 # Include directories

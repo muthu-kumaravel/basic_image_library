@@ -19,7 +19,7 @@ status img_return(
     op_img_size->height = ip_img_size.height;
     op_img_size->width = ip_img_size.width;
     DEBUG_INFO("\nInput Sizes\nHeight:\t %d\nWidth:\t %d\nChennel:\t %d", ip_img_size.height, ip_img_size.width, ip_img_size.channel);
-    DEBUG_INFO("\nOutput Sizes set to\n Height:\t %d\nWidth:\t %d\nChennel:\t %d", op_img_size->height, op_img_size->width, op_img_size->channel);
+    DEBUG_INFO("\nOutput Sizes set to\nHeight:\t %d\nWidth:\t %d\nChennel:\t %d", op_img_size->height, op_img_size->width, op_img_size->channel);
     memcpy(op_buff, ip_buff, ip_img_size.channel * ip_img_size.height * ip_img_size.width * sizeof(uint8));
     if (op_buff != NULL)
     {

@@ -20,12 +20,12 @@ status img_absolute_difference(
     op_img_size->height = ip_img_size.height;
     op_img_size->width = ip_img_size.width;
     DEBUG_INFO("\nInput Sizes\nHeight:\t %d\nWidth:\t %d\nChennel:\t %d", ip_img_size.height, ip_img_size.width, ip_img_size.channel);
-    DEBUG_INFO("\nOutput Sizes set to\n Height:\t %d\nWidth:\t %d\nChennel:\t %d", op_img_size->height, op_img_size->width, op_img_size->channel);
-    for (int i = 0; i < ip_img_size.channel * ip_img_size.height * ip_img_size.width; i++)
+    DEBUG_INFO("\nOutput Sizes set to\nHeight:\t %d\nWidth:\t %d\nChennel:\t %d", op_img_size->height, op_img_size->width, op_img_size->channel);
+    for (uint32 i = 0; i < ip_img_size.channel * ip_img_size.height * ip_img_size.width; i++)
     {
         int temp = (int)*(ip_buff1 + i) - (int)*(ip_buff2 + i);
         temp = ABS(temp);
-        *(op_buff + i) = PIXELCHECK(temp);
+        *(op_buff + i) = (uint8)(PIXELCHECK(temp));
     }
     if (op_buff != NULL)
     {

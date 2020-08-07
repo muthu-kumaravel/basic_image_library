@@ -57,16 +57,6 @@ extern "C"
 #define DEBUG_INFO(...)
 #endif
 
-#if PROFILE_TIME
-#define FR_ERR(...)
-#else
-#define FR_ERR(...)          \
-    {                        \
-        printf(__VA_ARGS__); \
-        fflush(stdout);      \
-    }
-#endif
-
 #define MAX_IMG_LENGTH (24883200)
 #define PI 3.14159265
 #define RAD(deg) (deg * PI / 180)
