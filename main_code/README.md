@@ -19,6 +19,8 @@ Basic Image Processing library is a comprehensive computer vision and image proc
   - [Image Copy](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#1-image-return)
 - [Math Functions](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#math-functions)
   - [Absolute Difference](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#1-absolute-difference)
+- [Adobe Functions](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#adobe-functions)
+  - [Temperature](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#1-temperature)
 
 * * *
 
@@ -79,3 +81,27 @@ status img_absolute_difference(
 | out[3]    | op_buff           | Unsigned char   |
 | in[4]     | ip_img_size       | struct img_size |
 | out[5]    | op_img_size       | struct img_size |
+
+### Adobe Functions
+
+#### 1. Temperature
+
+Performes a Temprature modificaton on given input images
+
+``` c
+status img_temprature(
+        uint8 *ip_buff,
+        uint8 *op_buff,
+        img_size ip_img_size,
+        img_size *op_img_size,
+        int8 temprature);
+```  
+
+
+| IO        | Variable          | Type            |
+|:----------|:------------------|:----------------|
+| in[1]     | ip_buff           | Unsigned char   |
+| out[2]    | op_buff           | Unsigned char   |
+| in[3]     | ip_img_size       | struct img_size |
+| out[4]    | op_img_size       | struct img_size |
+| in[5]     | temperature       | Integer         |
