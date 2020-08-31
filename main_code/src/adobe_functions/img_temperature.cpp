@@ -7,18 +7,18 @@
 
 #include "img_temperature.hpp"
 
-/****************IMAGE TEMPRATURE****************/
-status img_temprature(
+/****************IMAGE temperature****************/
+status img_temperature(
     uint8 *ip_buff,
     uint8 *op_buff,
     img_size ip_img_size,
     img_size *op_img_size,
-    int8 temprature)
+    int8 temperature)
 {
     DEBUG_INFO("\nInitializing and processing Image Temperature");
-    if(temprature > 128 || temprature < -127)
+    if(int32(INRANGE((int32)temperature, -127, 128)) == (int32)(0))
     {
-        DEBUG_INFO("\nTemperature out of range must be between -127 to 128");
+        DEBUG_INFO("\nTemperature out of range must be between -127 to 128, but input temperature is %d and range is %d", (int32)temperature, INRANGE((int32)temperature, -127, 128));
         return ERROR;
     }
     else
@@ -28,14 +28,17 @@ status img_temprature(
         op_img_size->width = ip_img_size.width;
         DEBUG_INFO("\nInput Sizes\nHeight:\t %d\nWidth:\t %d\nChennel:\t %d", ip_img_size.height, ip_img_size.width, ip_img_size.channel);
         DEBUG_INFO("\nOutput Sizes set to\nHeight:\t %d\nWidth:\t %d\nChennel:\t %d", op_img_size->height, op_img_size->width, op_img_size->channel);
-        for(uint32 iter = 0; iter < op_img_size->height * op_img_size->width * op_img_size->channel; iter += 3)
+        float32 *hsv = (float32 *)malloc(sizeof(float32) * op_img_size->height * op_img_size->width * op_img_size->channel);
+        img_size hsv_img_size;
+        if(img_rgb_to_hsv(ip_buff, hsv, ip_img_size, &hsv_img_size) == ERROR)
         {
-            int32 temp = (int32)*(ip_buff + iter) + (int32)(temprature);
-            temp = (int32)(PIXELCHECK(temp));
-            *(op_buff + iter) = (uint8)(temp);
-            temp = (int32)*(ip_buff + iter + op_img_size->channel - 1) - (int32)(temprature);
-            temp = (int32)(PIXELCHECK(temp));
-            *(op_buff + iter + op_img_size->channel - 1) = (uint8)(temp);
+            DEBUG_INFO("\nImage Temperature unsuccessfull"); 
+            return ERROR;
+        }
+        if(img_hsv_to_rgb(hsv, op_buff, hsv_img_size, op_img_size) == ERROR)
+        {
+            DEBUG_INFO("\nImage Temperature unsuccessfull"); 
+            return ERROR;
         }
         if (op_buff != NULL)
         {

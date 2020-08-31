@@ -7,15 +7,18 @@
 
 cmake_minimum_required (VERSION 3.5.0)
 
+
 #######
 # Project name & version
 ######
 project (BasicImageLibrary)
 
+
 #######
 # Define user options
 ######
-option(DEBUG "Build Basic Image Library in DEBUG mode" OFF)
+option(DEBUG "Build Basic Image Library and sample application in DEBUG mode" ON)
+
 
 #######
 # Set necessary flags
@@ -40,6 +43,7 @@ if(WIN32)
   endif(DEBUG)
 endif(WIN32)
 
+
 ######
 # Identify system architecture
 #####
@@ -48,6 +52,7 @@ if(UNIX)
 elseif(WIN32)
   set(ARCHITECTURE "x86_64")
 endif()
+
 
 #######
 # Set essential flags for DEBUG build
@@ -61,33 +66,39 @@ else (DEBUG)
   set(CXX_FLAGS "${CXX_FLAGS} ${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_RELEASE}")
 endif (DEBUG)
 
+
 #####
 # Include directories
 #####
-include_directories("${PROJECT_SOURCE_DIR}/includes/core"
-                    "${PROJECT_SOURCE_DIR}/includes/basic_functions"
-                    "${PROJECT_SOURCE_DIR}/includes/math_functions"
-                    "${PROJECT_SOURCE_DIR}/includes/adobe_functions"
-                    "${PROJECT_SOURCE_DIR}/includes/colour_conversion_functions")
+include_directories("${PROJECT_SOURCE_DIR}/main_code/includes/core"
+                    "${PROJECT_SOURCE_DIR}/main_code/includes/basic_functions"
+                    "${PROJECT_SOURCE_DIR}/main_code/includes/math_functions"
+                    "${PROJECT_SOURCE_DIR}/main_code/includes/adobe_functions"
+                    "${PROJECT_SOURCE_DIR}/main_code/includes/colour_conversion_functions")
+
+
+############################ IMAGE LIBRARY BUILD ##############################
+
 
 #####
 # Source files
 #####
-file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/src/basic_functions/*.cpp"
-                    "${PROJECT_SOURCE_DIR}/src/math_functions/*.cpp"
-                    "${PROJECT_SOURCE_DIR}/src/adobe_functions/*.cpp"
-                    "${PROJECT_SOURCE_DIR}/src/colour_conversion_functions/*.cpp")
+file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/main_code/src/basic_functions/*.cpp"
+                    "${PROJECT_SOURCE_DIR}/main_code/src/math_functions/*.cpp"
+                    "${PROJECT_SOURCE_DIR}/main_code/src/adobe_functions/*.cpp"
+                    "${PROJECT_SOURCE_DIR}/main_code/src/colour_conversion_functions/*.cpp")
+
 
 #####
 # Set Basic Image library generation path
 #####
 if (WIN32)
-  set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../lib)
+  set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 else (WIN32)
   if(DEBUG)  
-    set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../lib/Debug)
+    set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib/Debug)
   else(DEBUG)  
-    set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../lib/Release)
+    set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib/Release)
   endif(DEBUG)
 endif (WIN32)
 
@@ -97,10 +108,12 @@ endif (WIN32)
 #####
 add_library(basic_image_core STATIC ${SRC_FILES})
 
+
 #####
 # Link dependency libs with basic image lib
 #####
 set(BASIC_IMAGE_CORE ${LIBRARY_OUTPUT_PATH}/libbasic_image_core.a)
+
 
 #####
 # Build Basic Image library with all its dependencies linked statically
@@ -120,4 +133,38 @@ elseif (UNIX AND NOT APPLE AND NOT ${ARCHITECTURE} STREQUAL "aarch64")
 elseif(APPLE OR ${ARCHITECTURE} STREQUAL "aarch64")
   add_library(basic_image STATIC ${SRC_FILES})
 endif()
+
+
+######################### DEMO APPLICATION BUILD ##############################
+
+
+#####
+# Build Basic Image sample app
+#####
+if (WIN32)
+  set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/test_application/bin)
+elseif (UNIX AND NOT APPLE)
+  if(DEBUG)
+    set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/test_application/bin/Debug)
+  else(DEBUG)  
+    set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/test_application/bin/Release)
+  endif(DEBUG)
+elseif (APPLE)
+  if(DEBUG)
+    set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/test_application/bin/Debug)
+  else(DEBUG)  
+    set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/test_application/bin/Release)
+  endif(DEBUG)
+endif (WIN32)
+add_executable(basic_image_demo ${PROJECT_SOURCE_DIR}/test_application/basic_image_demo.cpp)
+
+if (WIN32)
+  target_link_libraries(basic_image_demo ${BASIC_IMAGE_LIB} basic_image_core)
+elseif (UNIX AND NOT APPLE)
+  target_link_libraries(basic_image_demo  ${BASIC_IMAGE_LIB} ${UTIL_LIBRARIES} basic_image_core)
+elseif (APPLE)
+  target_link_libraries(basic_image_demo ${BASIC_IMAGE_LIB} ${CMAKE_THREAD_LIBS_INIT} basic_image_core)
+endif (WIN32)
+set_target_properties(basic_image_demo PROPERTIES COMPILE_FLAGS "${CXX_FLAGS} ${CUDA_NVCC_FLAGS}")
+target_link_libraries(basic_image_demo  ${BASIC_IMAGE_LIB} basic_image_core)
 ###############################################################################

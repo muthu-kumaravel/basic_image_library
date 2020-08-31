@@ -67,7 +67,8 @@ endif (DEBUG)
 include_directories("${PROJECT_SOURCE_DIR}/../main_code/includes/core"
                     "${PROJECT_SOURCE_DIR}/../main_code/includes/basic_functions"
                     "${PROJECT_SOURCE_DIR}/../main_code/includes/math_functions"
-                    "${PROJECT_SOURCE_DIR}/../main_code/includes/adobe_functions")
+                    "${PROJECT_SOURCE_DIR}/../main_code/includes/adobe_functions"
+                    "${PROJECT_SOURCE_DIR}/../main_code/includes/colour_conversion_functions")
 
 #####
 # Set Basic Image library path
