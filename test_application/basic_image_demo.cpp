@@ -54,11 +54,11 @@ int main()
     } 
 
     /* img_return */
-    int8 temprature = 5;
-    const char *output_image_path_img_temprature = "output_test_images/img_temprature.png";
-    if(err == img_temprature(ip_image_1, op_image_1, ip_image_size_1, &op_image_size_1, temprature))
+    int8 temperature = 5;
+    const char *output_image_path_img_temperature = "output_test_images/img_temperature.png";
+    if(img_temperature(ip_image_1, op_image_1, ip_image_size_1, &op_image_size_1, temperature) == SUCCESS)
     {
-        stbi_write_png(output_image_path_img_temprature, op_image_size_1.width, op_image_size_1.height, op_image_size_1.channel, op_image_1, op_image_size_1.width * op_image_size_1.channel);
+        stbi_write_png(output_image_path_img_temperature, op_image_size_1.width, op_image_size_1.height, op_image_size_1.channel, op_image_1, op_image_size_1.width * op_image_size_1.channel);
         DEBUG_INFO("\nImage Temperature function processed and image write successfull");
     }
     else

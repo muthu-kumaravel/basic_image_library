@@ -17,6 +17,8 @@ extern "C"
 #include "img_return.hpp"
 #include "img_absolute_difference.hpp"
 #include "img_temperature.hpp"
+#include "img_rgb_to_hsv.hpp"
+#include "img_hsv_to_rgb.hpp"
 
 #ifdef __cplusplus
 }
