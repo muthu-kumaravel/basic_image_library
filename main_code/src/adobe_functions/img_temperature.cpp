@@ -16,9 +16,9 @@ status img_temperature(
     int8 temperature)
 {
     DEBUG_INFO("\nInitializing and processing Image Temperature");
-    if(int32(INRANGE(temperature, -127, 128)) == (int32)(0))
+    if(int32(INRANGE((int32)temperature, -127, 128)) == (int32)(0))
     {
-        DEBUG_INFO("\nTemperature out of range must be between -127 to 128, but input temperature is %d and range is %d", temperature, INRANGE(temperature, -127, 128));
+        DEBUG_INFO("\nTemperature out of range must be between -127 to 128, but input temperature is %d and range is %d", (int32)temperature, INRANGE((int32)temperature, -127, 128));
         return ERROR;
     }
     else
