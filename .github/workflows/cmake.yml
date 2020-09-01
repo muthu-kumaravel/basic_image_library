@@ -27,7 +27,7 @@ jobs:
     - name: configure
       run: cd main_code && mkdir build && cd build && cmake ..
     - name: build
-      run: cmake --build main_code/build
+      run: cmake --build main_code/build --config Debug
     - name: test
       run: cd main_code/build && ctest
     
