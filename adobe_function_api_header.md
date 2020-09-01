@@ -15,43 +15,33 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 ## File Description 
 
-* Information about different group of functions
-* Definition functions
 * How to access the API
 * API Definition
 
-## Supported Functions
+## Supported Adobe Functions
 
-- Basic Functions
-  - Basic Function [REDME](./basic_function_api_header.html)
-  - Image Copy
-- Math Functions
-  - Math Function [REDME](./math_function_api_header.html)
-  - Absolute Difference
-- Adobe Functions
-  - Adobe Function [REDME](./adobe_function_api_header.html)
-  - Temperature
-- Colour Conversion Function
-  - Colour Conversion Function [README](./colour_conversion_api_header.html)
-  - HSV to RGB
-  - RGB to HSV
+* Temperature (not fully supported)
 
-## Backend Types information
+## API & Header Description
 
-* **Image Size**
+### 1. Temperature
+
+Performes a Temprature modificaton on given input images
 
 ``` c
-typedef struct
-{
-    uint32 width;
-    uint32 height;
-    uint32 channel;
-} img_size;
-```
+status img_temprature(
+        uint8 *ip_buff,
+        uint8 *op_buff,
+        img_size ip_img_size,
+        img_size *op_img_size,
+        int8 temprature);
+```  
 
 
-| Variable          | Type            |
-|:------------------|:----------------|
-| width             | int             |
-| height            | int             |
-| channel           | int             |
+| IO        | Variable          | Type            |
+|:----------|:------------------|:----------------|
+| in[1]     | ip_buff           | Unsigned char   |
+| out[2]    | op_buff           | Unsigned char   |
+| in[3]     | ip_img_size       | struct img_size |
+| out[4]    | op_img_size       | struct img_size |
+| in[5]     | temperature       | Integer         |

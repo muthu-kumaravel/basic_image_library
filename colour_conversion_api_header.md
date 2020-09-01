@@ -15,43 +15,52 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 ## File Description 
 
-* Information about different group of functions
-* Definition functions
 * How to access the API
 * API Definition
 
-## Supported Functions
+## Supported Colour Conversion Functions
 
-- Basic Functions
-  - Basic Function [REDME](./basic_function_api_header.html)
-  - Image Copy
-- Math Functions
-  - Math Function [REDME](./math_function_api_header.html)
-  - Absolute Difference
-- Adobe Functions
-  - Adobe Function [REDME](./adobe_function_api_header.html)
-  - Temperature
-- Colour Conversion Function
-  - Colour Conversion Function [README](./colour_conversion_api_header.html)
-  - HSV to RGB
-  - RGB to HSV
+* HSV to RGB
+* RGB to HSV
 
-## Backend Types information
+## API & Header Description
 
-* **Image Size**
+### 1. HSV to RGB
+
+Converts HSV image to RGB image
 
 ``` c
-typedef struct
-{
-    uint32 width;
-    uint32 height;
-    uint32 channel;
-} img_size;
-```
+status img_hsv_to_rgb(
+        float32 *ip_buff,
+        uint8 *op_buff,
+        img_size ip_img_size,
+        img_size *op_img_size);
+```  
 
 
-| Variable          | Type            |
-|:------------------|:----------------|
-| width             | int             |
-| height            | int             |
-| channel           | int             |
+| IO        | Variable          | Type            |
+|:----------|:------------------|:----------------|
+| in[1]     | ip_buff           | Float           |
+| out[2]    | op_buff           | Unsigned char   |
+| in[3]     | ip_img_size       | struct img_size |
+| out[4]    | op_img_size       | struct img_size |
+
+### 2. RGB to HSV
+
+Converts RGB image to HSV image
+
+``` c
+status img_rgb_to_hsv(
+        uint8 *ip_buff,
+        float32 *op_buff,
+        img_size ip_img_size,
+        img_size *op_img_size);
+```  
+
+
+| IO        | Variable          | Type            |
+|:----------|:------------------|:----------------|
+| in[1]     | ip_buff           | Unsigned char   |
+| out[2]    | op_buff           | Float           |
+| in[3]     | ip_img_size       | struct img_size |
+| out[4]    | op_img_size       | struct img_size |

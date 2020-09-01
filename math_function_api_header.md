@@ -15,43 +15,38 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 ## File Description 
 
-* Information about different group of functions
-* Definition functions
 * How to access the API
 * API Definition
 
-## Supported Functions
+## Supported Math Functions
 
-- Basic Functions
-  - Basic Function [REDME](./basic_function_api_header.html)
-  - Image Copy
-- Math Functions
-  - Math Function [REDME](./math_function_api_header.html)
-  - Absolute Difference
-- Adobe Functions
-  - Adobe Function [REDME](./adobe_function_api_header.html)
-  - Temperature
-- Colour Conversion Function
-  - Colour Conversion Function [README](./colour_conversion_api_header.html)
-  - HSV to RGB
-  - RGB to HSV
+* Absolute Difference
 
-## Backend Types information
+## API & Header Description
 
-* **Image Size**
+### 1. Absolute Difference
+
+Performes a Absolute difference on two input images and does a pixel check on top of that
+
+> **img_absolute_difference** 
+>
+> OUTPUT = ABS(INPUT1 - INPUT2)
+
 
 ``` c
-typedef struct
-{
-    uint32 width;
-    uint32 height;
-    uint32 channel;
-} img_size;
-```
+status img_absolute_difference(
+        uint8 *ip_buff1,
+        uint8 *ip_buff2,
+        uint8 *op_buff,
+        img_size ip_img_size,
+        img_size *op_img_size);
+```  
 
 
-| Variable          | Type            |
-|:------------------|:----------------|
-| width             | int             |
-| height            | int             |
-| channel           | int             |
+| IO        | Variable          | Type            |
+|:----------|:------------------|:----------------|
+| in[1]     | ip_buff1          | Unsigned char   |
+| in[2]     | ip_buff2          | Unsigned char   |
+| out[3]    | op_buff           | Unsigned char   |
+| in[4]     | ip_img_size       | struct img_size |
+| out[5]    | op_img_size       | struct img_size |
