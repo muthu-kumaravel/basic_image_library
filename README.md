@@ -45,7 +45,7 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 * HSV to RGB
 
 **For more informations on API's Headers and usage visit**
-**[API README]((./api_header.html))** or **[API GITHUB README](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md)** or **[Main Code Includes](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code)**
+**[API README](https://muthu-kumaravel.github.io/basic_image_library/api_header.html)** or **[API GITHUB README](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md)** or **[Main Code Includes](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code)**
 
 * * *
 
