@@ -17,7 +17,7 @@ project (BasicImageLibrary)
 #######
 # Define user options
 ######
-option(DEBUG "Build Basic Image Library and sample application in DEBUG mode" ON)
+option(DEBUG "Build Basic Image Library and sample application in DEBUG mode" OFF)
 
 
 #######
