@@ -20,7 +20,7 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 ## Supported Adobe Functions
 
-* [Temperature](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md) (not fully supported)
+* [Temperature](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/adobe_functions/README.md#1-temperature) (not fully supported)
 
 ## API & Header Description
 

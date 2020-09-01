@@ -20,7 +20,7 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 ## Supported Math Functions
 
-* [Absolute Difference](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md)
+* [Absolute Difference](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/math_functions/README.md#1-absolute-difference)
 
 ## API & Header Description
 

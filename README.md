@@ -10,7 +10,7 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 >
 > Every Link in this page are related to master branch
-> Master branch will contain same code as the latest release which can be found in tags
+> (Master branch will contain same code as the latest release which can be found in tags)
 >
 
 ## Prerequisites
@@ -40,10 +40,12 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 * Image Copy
 * Absolute Difference
-* Temperature Modification (Yet to support in full scale, Added RGB <-> HSV conversio, colour not accurate)
+* Temperature Modification
+* RGB to HSV
+* HSV to RGB
 
 **For more informations on API's Headers and usage visit**
-**[API README]((./api_header.html))** or **[API GITHUB](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md)** or **[Main Code Includes](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code)**
+**[API README]((./api_header.html))** or **[API GITHUB README](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md)** or **[Main Code Includes](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code)**
 
 * * *
 

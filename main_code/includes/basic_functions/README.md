@@ -20,7 +20,7 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 ## Basic Functions
 
-* [Image Copy](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md)
+* [Image Copy](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/basic_functions/README.md#1-image-return)
 
 ## API & Header Description
 

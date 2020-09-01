@@ -20,8 +20,8 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 ## Supported Colour Conversion Functions
 
-* [HSV to RGB](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md)
-* [RGB to HSV](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/README.md)
+* [HSV to RGB](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/colour_conversion_functions/README.md#1-hsv-to-rgb)
+* [RGB to HSV](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/colour_conversion_functions/README.md#2-rgb-to-hsv)
 
 ## API & Header Description
 
