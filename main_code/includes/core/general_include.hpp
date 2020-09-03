@@ -19,6 +19,7 @@ extern "C"
 #include "img_temperature.hpp"
 #include "img_rgb_to_hsv.hpp"
 #include "img_hsv_to_rgb.hpp"
+#include "img_padding.hpp"
 
 #ifdef __cplusplus
 }
