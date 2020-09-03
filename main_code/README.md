@@ -1,3 +1,4 @@
+![Basic_Image_Library](https://github.com/muthu-kumaravel/basic_image_library/workflows/Basic_Image_Library/badge.svg)
 [![MIT licensed](https://img.shields.io/github/license/muthu-kumaravel/basic_image_library)](https://opensource.org/licenses/MIT)
 [![stars](https://img.shields.io/github/stars/muthu-kumaravel/basic_image_library)](https://github.com/muthu-kumaravel/basic_image_library/stargazers)
 [![forks](https://img.shields.io/github/forks/muthu-kumaravel/basic_image_library)](https://github.com/muthu-kumaravel/basic_image_library/network/members)
@@ -7,101 +8,50 @@
 
 Basic Image Processing library is a comprehensive computer vision and image processing library for all architecture with CPU backend and developed for __Linux__, __Windows__, and __Mac__.
 
+>
+> Every Link in this page are related to master branch
+> Master branch will contain same code as the latest release which can be found in tags
+>
+
 ## File Description 
 
-* Definition on header files
+* Information about different group of functions
+* Definition functions
 * How to access the API
 * API Definition
 
 ## Supported Functions
 
-- [Basic Functions](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#basic-functions)
-  - [Image Copy](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#1-image-return)
-- [Math Functions](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#math-functions)
-  - [Absolute Difference](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#1-absolute-difference)
-- [Adobe Functions](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#adobe-functions)
-  - [Temperature](https://github.com/muthu-kumaravel/basic_image_library/tree/master/main_code#1-temperature)
+- Basic Functions
+  - Basic Function [REDME](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/basic_functions/README.md)
+  - [Image Copy](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/basic_functions/README.md#1-image-return)
+- Math Functions
+  - Math Function [REDME](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/math_functions/README.md)
+  - [Absolute Difference](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/math_functions/README.md#1-absolute-difference)
+- Adobe Functions
+  - Adobe Function [REDME](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/adobe_functions/README.md)
+  - [Temperature](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/adobe_functions/README.md#1-temperature)
+- Colour Conversion Function
+  - Colour Conversion Function [README](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/colour_conversion_functions/README.md)
+  - [HSV to RGB](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/colour_conversion_functions/README.md#1-hsv-to-rgb)
+  - [RGB to HSV](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/colour_conversion_functions/README.md#2-rgb-to-hsv)
 
-* * *
+## Backend Types information
 
-## API & Header Description
-
-### Basic Functions
-
-#### 1. Image Return
-
-Copies input image bitwise to the destination image (memcpy)
-
-> **img_return** 
-> 
-> OUTPUT = INPUT1
-
+* **Image Size**
 
 ``` c
-status img_return(
-        uint8 *ip_buff,
-        uint8 *op_buff,
-        img_size ip_img_size,
-        img_size *op_img_size);
-```  
+typedef struct
+{
+    uint32 width;
+    uint32 height;
+    uint32 channel;
+} img_size;
+```
 
 
-| IO        | Variable          | Type            |
-|:----------|:------------------|:----------------|
-| in[1]     | ip_buff           | Unsigned char   |
-| out[2]    | op_buff           | Unsigned char   |
-| in[3]     | ip_img_size       | struct img_size |
-| out[4]    | op_img_size       | struct img_size |
-
-### Math Functions
-
-#### 1. Absolute Difference
-
-Performes a Absolute difference on two input images and does a pixel check on top of that
-
-> **img_absolute_difference** 
->
-> OUTPUT = ABS(INPUT1 - INPUT2)
-
-
-``` c
-status img_absolute_difference(
-        uint8 *ip_buff1,
-        uint8 *ip_buff2,
-        uint8 *op_buff,
-        img_size ip_img_size,
-        img_size *op_img_size);
-```  
-
-
-| IO        | Variable          | Type            |
-|:----------|:------------------|:----------------|
-| in[1]     | ip_buff1          | Unsigned char   |
-| in[2]     | ip_buff2          | Unsigned char   |
-| out[3]    | op_buff           | Unsigned char   |
-| in[4]     | ip_img_size       | struct img_size |
-| out[5]    | op_img_size       | struct img_size |
-
-### Adobe Functions
-
-#### 1. Temperature
-
-Performes a Temprature modificaton on given input images
-
-``` c
-status img_temprature(
-        uint8 *ip_buff,
-        uint8 *op_buff,
-        img_size ip_img_size,
-        img_size *op_img_size,
-        int8 temprature);
-```  
-
-
-| IO        | Variable          | Type            |
-|:----------|:------------------|:----------------|
-| in[1]     | ip_buff           | Unsigned char   |
-| out[2]    | op_buff           | Unsigned char   |
-| in[3]     | ip_img_size       | struct img_size |
-| out[4]    | op_img_size       | struct img_size |
-| in[5]     | temperature       | Integer         |
+| Variable          | Type            |
+|:------------------|:----------------|
+| width             | int             |
+| height            | int             |
+| channel           | int             |
