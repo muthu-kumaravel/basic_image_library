@@ -38,9 +38,10 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 
 * Image Copy
 * Absolute Difference
-* Temperature Modification
-* RGB to HSV
-* HSV to RGB
+* Image Padding
+* Temperature Modification (Basic Implementation)
+* RGB to HSV (Basic Implementation)
+* HSV to RGB (Basic Implementation)
 
 * * *
 
