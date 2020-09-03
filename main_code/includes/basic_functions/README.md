@@ -21,6 +21,7 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 ## Basic Functions
 
 * [Image Copy](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/basic_functions/README.md#1-image-return)
+* [Image Padding](https://github.com/muthu-kumaravel/basic_image_library/blob/master/main_code/includes/basic_functions/README.md#2-image-padding)
 
 ## API & Header Description
 
@@ -48,3 +49,36 @@ status img_return(
 | out[2]    | op_buff           | Unsigned char   |
 | in[3]     | ip_img_size       | struct img_size |
 | out[4]    | op_img_size       | struct img_size |
+
+### 2. Image Padding
+
+Input a smaller image and outputs a same image padded inside a larger image of user given dimension
+
+``` c
+status img_padding(
+        uint8 *ip_buff,
+        uint8 *op_buff,
+        img_size ip_img_size,
+        img_size *op_img_size,
+        img_padding_type bg);
+```  
+
+
+| IO        | Variable          | Type            |
+|:----------|:------------------|:----------------|
+| in[1]     | ip_buff           | Unsigned char   |
+| out[2]    | op_buff           | Unsigned char   |
+| in[3]     | ip_img_size       | struct img_size |
+| in[4]     | op_img_size       | struct img_size |
+| in[5]     | bg                | img_padding_type|
+
+* **img_padding_type**
+
+``` c
+typedef enum
+{
+    NO_COLOUR = 1,
+    WHITE = 255,
+    BLACK = 0
+} img_padding_type;
+```

@@ -46,6 +46,14 @@ extern "C"
         uint32 height;
         uint32 channel;
     } img_size;
+
+    typedef enum
+    {
+        NO_COLOUR = 1,
+        WHITE = 255,
+        BLACK = 0
+    } img_padding_type;
+
 #if BIL_DEBUG
 #define ASSERT(s) assert(s);
 #define DEBUG_INFO(...)      \
