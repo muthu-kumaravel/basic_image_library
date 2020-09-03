@@ -25,6 +25,7 @@ Basic Image Processing library is a comprehensive computer vision and image proc
 - Basic Functions
   - Basic Function [REDME](./basic_function_api_header.html)
   - Image Copy
+  - Image Padding
 - Math Functions
   - Math Function [REDME](./math_function_api_header.html)
   - Absolute Difference
